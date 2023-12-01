@@ -1,0 +1,213 @@
+/* app/assets/stylesheets/application.css */  
+body {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+.gameboy {
+  background-image: url('one.png');
+  background-size: cover;
+  width: 300px;
+  aspect-ratio: 3/5;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-2deg);
+  margin: 50px auto;
+  position: relative;
+}
+.screen {
+  width: 165px;
+  height: 151.5px;
+  border: 0px solid #333;
+  border-radius: 8px 5px 3px 4px;
+  padding: 8px;
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-49%);
+  overflow-y: auto;
+  z-index: 1;
+}
+.screen-shine {
+  content: '';
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-49%);
+  width: 165px;
+  height: 151.5px;
+  background: linear-gradient(224.5deg, rgba(255, 255, 255, 0.15) 60.5%, rgba(255, 255, 255, 0) 50%);
+  border-radius: 8px 5px 3px 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checklist li {
+  color: #333;
+  margin-bottom: 4px;
+  font-size: 0.5em;
+  line-height: 1.2; 
+  display: flex;
+  align-items: center;
+}
+.custom-checkbox.checked {
+  background: url('check.png') center/contain no-repeat;
+}
+.text-red-600 {
+  font-size: 0.5em;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.custom-checkbox {
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  margin-right: 10px;
+  border: 2px solid #333;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.task-title-container {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 160px;
+  display: inline-block;
+}
+.task-title {
+  display: inline-block;
+}
+#new-task-form {
+  color: black;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 141.5px;
+  border-radius: 5px;
+  max-width: 160px;
+  padding: 8px;
+  z-index: 2;
+  display: none;
+  overflow-y: auto;
+}
+input {
+  max-width: 149px;
+  color: black;
+  background: none;
+  outline:none;
+  border: none;
+  caret-color: transparent;
+}
+.field {
+  color: black;
+}
+#new-task-button {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 308px;
+  left: 246px;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+}
+#form-actions {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#externalSaveButton {
+  display: none;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 308px;
+  left: 246px;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+}
+#show-private-tasks-button {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 409px;
+  left: 90px;
+  width: 38px;
+  height: 11px;
+  border-radius: 10px;
+  transform: rotate(-26deg);
+}
+#externalCancelButton {
+  display: none;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 331px;
+  left: 195px;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+#cancel-button {
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#Game_Image > img {
+  width: 45px;
+  aspect-ratio: 238/190;
+}
+.field {
+  display: flex;
+}
+#task_private {
+  display: none;
+}
+.battery-indicator {
+  background-color: red;
+  opacity: 1;
+  transition: opacity 0.5s;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  position: absolute;
+  top: 113px;
+  right: 255px;
+}
+#task_private:checked ~ .battery-indicator {
+  animation: blink-animation 1s infinite;
+}
+.blink {
+  animation: blink-animation 1s infinite;
+}
+@keyframes blink-animation {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+

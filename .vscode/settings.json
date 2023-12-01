@@ -1,0 +1,49 @@
+
+{
+    "editor.fontFamily": "hack",
+    "editor.fontLigatures": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "comment",
+                "scope": [
+                    "comment"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Keyword Storage",
+                "scope": [
+                    "keyword",
+                    "keyword.control",
+                    "storage"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Entity",
+                "scope": [
+                    "entity.name.method",
+                    "entity.name.type.class",
+                    "entity.other.attribute-name"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Variable",
+                "scope": [
+                    "variable.language"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    }
+}

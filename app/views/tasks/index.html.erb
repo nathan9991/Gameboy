@@ -1,0 +1,29 @@
+<!-- app/views/tasks/index.html.erb -->
+<div class="gameboy">
+<div class="screen-shine"></div>
+  <div class="screen">
+    <% if @tasks.empty? %>
+      <p>There are no tasks yet. <%= link_to 'Create a new task', new_task_path %></p>
+    <% else %>
+    <ul class="checklist">
+      <% @tasks.each do |task| %>
+        <li class="task-item">
+          <div class="custom-checkbox" data-check-url="<%= complete_task_path(task) %>" data-task-id="<%= task.id %>" <%= 'checked' if task.complete %>></div>
+          <div class="task-title-container">
+            <span class="task-title" id="task-title-<%= task.id %>"><%= task.title %></span>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+  <%= link_to 'O', new_task_path, id: 'new-task-button', class: 'new-task-link', remote: true %>
+  <button id="externalSaveButton">Save from Outside</button>
+  <% show_private = params[:show_private] == 'true' %>
+  <%= link_to (show_private ? "Hide Private Tasks" : "Show All Tasks"),
+              tasks_path(show_private: !show_private),
+              remote: true, id: "show-private-tasks-button" %>
+
+  <button id="externalCancelButton">cancel from Outside</button>
+  <div class="battery-indicator"></div>
+</div>
