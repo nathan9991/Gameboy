@@ -81,7 +81,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    # Ensure that you are permitting the correct parameters that your form is sending
-    params.require(:task).permit(:title, :private) # replace :title and :description with actual task attributes
+    # Only allow the permitted attributes from the form
+    params.require(:task).permit(:title, :private) # permits :title and :private
   end
 end
